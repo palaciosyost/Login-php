@@ -1,0 +1,166 @@
+$color-card :#fbbf02;
+$color-btn :#0b3238;
+$colo-border: #fb9702;
+$colo-hover-btn :#1c616f ;
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.fondo {
+    background-image: linear-gradient(rgba(33, 33, 33, 0.559), rgba(33, 33, 33, 0.501)), url(../../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contenedor {
+        background-color: $color-card;
+        width: auto;
+        height: auto;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 15px;
+        display: flex;
+        flex-flow: row wrap;
+
+        .img-content {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+            background-image: url(../../img/paisaje.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 2px solid $colo-border;
+            filter: drop-shadow(1px 1px 5px $colo-border);
+            margin-right: 10px;
+        }
+
+        .formulario {
+            width: 300px;
+            height: auto;
+            color: $color-btn;
+            margin-right: auto;
+            margin-left: auto;
+            .alert {
+                margin-bottom: 0px;
+            }
+            .err{
+                color: red;
+            }
+            .win{
+                color: green;
+            }
+            .titulo-formulario h1 {
+                margin-bottom: 0px;
+                font-weight: bold;
+            }
+
+            .titulo-formulario span {
+                font-size: 12px;
+                font-weight: 700;
+                padding-left: 4px;
+            }
+
+            .content:first-child {
+                margin-top: 25px;
+            }
+
+            .content {
+                margin-bottom: 10px;
+
+                
+                input {
+                    border: none;
+                    border-radius: 40px;
+                    width: 85%;
+                    height: 23px;
+                    padding-left: 10px;
+
+                    &:focus {
+                        outline: none;
+
+                    }
+                }
+
+                label {
+                    position: relative;
+                    span {
+                        font-weight: bold;
+                        font-size: 13px;
+                    }    
+
+                    svg {
+                        position: absolute;
+                        top: 22px;
+                        right: 12px;
+                        cursor: pointer;
+
+                    }
+                }
+            }
+
+            input[type="submit"] {
+                background-color: $color-btn;
+                border: none;
+                height: 30px;
+                width: 38%;
+                color: aliceblue;
+                border-radius: 40px;
+                cursor: pointer;
+                margin-top: 20px;
+                animation: rotate 1.3s infinite alternate;
+                &:hover{
+                    background-color: $colo-hover-btn;
+                }
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: translateX(-10px);
+
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    transform: translateX(10px);
+                }
+            }
+
+            form {
+                display: flex;
+                flex-flow: column nowrap;
+
+                .registro-form {
+                    font-size: 11px;
+                    display: block;
+                    text-align: right;
+                    margin-right: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 647px) {
+    .img-content {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+
+}
